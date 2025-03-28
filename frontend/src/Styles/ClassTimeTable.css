@@ -1,0 +1,128 @@
+/* General Container */
+.timetable-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Admin Section */
+  .admin-section {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Flex container for two-column layout */
+  .timetable-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  /* Each Day Box (Now 2 per row) */
+  .day-section {
+    flex: 1;
+    min-width: 48%;
+    background: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure single-day rows align properly */
+  @media (max-width: 768px) {
+    .day-section {
+      min-width: 100%;
+    }
+  }
+  
+  /* Day Header */
+  .day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Extra Class Form */
+  .extra-class-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .extra-class-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+  
+  .add-class-btn {
+    background: #28a745;
+    color: white;
+  }
+  
+  .confirm-btn {
+    background: #007bff;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background: #dc3545;
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Timetable Table */
+  .timetable-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .timetable-table th,
+  .timetable-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .timetable-table th {
+    background: #007bff;
+    color: white;
+  }
+  
+  /* Class Status */
+  .cancelled {
+    background: #ffcccc !important;
+  }
+  
+  .extra-class {
+    background: #ccffcc !important;
+  }
+  
