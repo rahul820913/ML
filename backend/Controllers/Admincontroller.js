@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import User from '../Models/StudentModel.js';
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import validator from "validator";
 import Department from "../Models/Department.js";
 import ClassTimeTable from "../Models/ClassTimeTable.js"
@@ -31,7 +31,7 @@ const adddepartment=async(req,res)=>{
 
 const getAllDepartments = async (req, res) => {
     try {
-        const data = await Department.findAll();
+        const data = await Department.find();
         if (!data || data.length === 0) {
             return res.status(404).json({ success: false, message: "Departments not found" });
         }
@@ -114,4 +114,48 @@ const deleteExtraClass = async (req, res) => {
       res.status(500).json({ success: false, message: "Error deleting class", error });
     }
   };
-export {adddepartment,getAllDepartments,markextra,classcancel,deleteExtraClass};
+
+  const getalluserdata = async (req, res) => {
+    try {
+      const users = await User.find();
+  
+      if (!users || users.length === 0) {
+        return res.status(404).json({ success: false, message: "No users found" });
+      }
+  
+      res.status(200).json({ success: true, users });
+    } catch (error) {
+      console.error("Error fetching users:", error);
+      res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+  };
+  
+  const updateUserData = async (req, res) => {
+    const { role } = req.body;
+    const { userId } = req.params;
+  
+    try {
+      if (!role || !["admin", "user"].includes(role.toLowerCase())) {
+        return res.status(400).json({ success: false, message: "Invalid role" });
+      }
+  
+      const updatedUser = await User.findByIdAndUpdate(
+        userId, 
+        { role },
+        { new: true, runValidators: true } 
+      );
+  
+      if (!updatedUser) {
+        return res.status(404).json({ success: false, message: "User not found" });
+      }
+  
+      res.status(200).json({ success: true, message: "User role updated successfully", user: updatedUser });
+    } catch (error) {
+      console.error("Error updating user:", error);
+      res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+  };
+  
+
+
+export {adddepartment,getAllDepartments,markextra,classcancel,deleteExtraClass,getalluserdata,updateUserData};

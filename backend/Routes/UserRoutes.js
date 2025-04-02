@@ -1,7 +1,7 @@
 import express from 'express';
 import { registerUser, loginUser,createExam , upload,getExamByRollNo,createShiftTiming ,createTimetable,getTimetable ,getprofile} from '../Controllers/UserController.js';
 import authUser from '../middleware/Userauth.js'
-import {adddepartment,getAllDepartments,markextra,classcancel,deleteExtraClass} from "../Controllers/Admincontroller.js"
+import {adddepartment,getAllDepartments,markextra,classcancel,deleteExtraClass,getalluserdata,updateUserData} from "../Controllers/Admincontroller.js"
 const router = express.Router();
 
 router.post('/register', registerUser);
@@ -17,5 +17,7 @@ router.get('/get/dept',authUser,getAllDepartments)
 router.post('/extra',authUser,markextra);
 router.put('/timetable/cancel/:id',authUser,classcancel);
 router.delete("/timetable/extra/:id",authUser,deleteExtraClass);
+router.get("/data",authUser,getalluserdata);
+router.put("/data/:userId/role",authUser,updateUserData);
 
 export default router;

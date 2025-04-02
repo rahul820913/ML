@@ -1,6 +1,6 @@
 
 import jwt from "jsonwebtoken";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import validator from "validator";
 import User from "../Models/StudentModel.js";
 import Sitting from "../Models/Sitting.js"; 

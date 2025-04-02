@@ -7,6 +7,9 @@ import Home from './Components/Home';
 import Profile from './Components/Profile';
 import Register from './Components/Register';
 import './App.css'; 
+import UserInfo from './Components/UserInfo';
+
+
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
             <Route path="/class-timetable" element={<ClassTimeTable />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Register />} />
+            <Route path= "/user-info" element={<UserInfo/>}/>
           </Routes>
         </div>
       </BrowserRouter>

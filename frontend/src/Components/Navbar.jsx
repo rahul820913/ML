@@ -18,6 +18,7 @@ const Navbar = () => {
         });
 
         if (response.data.success) {
+          console.log(response.data.user);
           setUser(response.data.user);
         }
       } catch (error) {
@@ -41,6 +42,7 @@ const Navbar = () => {
         <a href="/home" style={linkStyle}>Home</a>
         <a href="/exam-schedule" style={linkStyle}>Exam Schedule</a>
         <a href="/class-timetable" style={linkStyle}>Class Time Table</a>
+        {user?.role === "Admin" && <a href="/user-info" style={linkStyle}>User info</a>}
       </div>
 
       {user ? (
