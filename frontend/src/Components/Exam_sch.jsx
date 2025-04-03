@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/Exam_sch.css"; // Import external CSS
+import "./Exam_sch.css"; // Import external CSS
 
 const ExamSch = () => {
     const [rollno, setRollNumber] = useState("");

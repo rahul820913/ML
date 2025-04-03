@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ExcelUpload from "./Exeltojson";
-import "../styles/Home.css"; // Import external CSS
+import "./Home.css"; // Import external CSS
 
 const Home = () => {
     const [rollno, setRollNumber] = useState("");

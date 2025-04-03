@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TimeTableCreate from "./CreateTime";
-import "../Styles/ClassTimeTable.css";
+import "./ClassTimeTable.css";
 
 const ClassTimeTable = () => {
   const [timetable, setTimetable] = useState([]);

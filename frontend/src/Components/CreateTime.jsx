@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/CreateTime.css"; 
+import "./CreateTime.css"; 
 
 const TimeTableCreate = ({ department, year }) => {
   const [schedule, setSchedule] = useState([]);

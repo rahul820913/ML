@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProfileAvatar from "./ProfileAvatar";
-import "../styles/Profile.css"; // Import external CSS
+import "./Profile.css"; // Import external CSS
 
 const Profile = () => {
   const [user, setUser] = useState({});

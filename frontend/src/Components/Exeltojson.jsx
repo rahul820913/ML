@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/Exeltojson.css"; 
+import "./Exeltojson.css"; 
 
 const ExcelUpload = () => {
     const [file, setFile] = useState(null);
