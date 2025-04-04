@@ -17,31 +17,7 @@ A complete College Portal web application built using the **MERN stack** (MongoD
 - **Database:** MongoDB
 - **Authentication:** JWT / bcrypt
 - **Other Tools:** Axios, React Router, dotenv
-
-## 📸 Screenshots
-
-> _Add screenshots of your class and exam schedule pages here for a better visual idea._
-
-## 🔧 Installation
-
-## Folder structure
-
-college-portal/
-├── backend/
-│   ├── models/
-│   ├── routes/
-│   ├── controllers/
-│   └── server.js
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   └── App.js
-└── README.md
-
 ### Clone the Repository
-
-
 ```bash
 git clone https://github.com/rahul820913/college-portal.git
 cd college-portal
