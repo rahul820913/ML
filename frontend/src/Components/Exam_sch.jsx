@@ -17,7 +17,7 @@ const ExamSch = () => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:2001/api/users/get/${rollno}`);
+            const response = await axios.get(`/api/users/get/${rollno}`);
             const data = response.data;
 
             if (!data.success) {

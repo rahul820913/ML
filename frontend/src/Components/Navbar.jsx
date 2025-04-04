@@ -13,7 +13,7 @@ const Navbar = () => {
         const token = localStorage.getItem("token");
         if (!token) return; 
 
-        const response = await axios.get("http://localhost:2001/api/users/info", {
+        const response = await axios.get("/api/users/info", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

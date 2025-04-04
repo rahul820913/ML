@@ -14,7 +14,7 @@ const Profile = () => {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No authentication token found");
 
-        const response = await axios.get("http://localhost:2001/api/users/info", {
+        const response = await axios.get("/api/users/info", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

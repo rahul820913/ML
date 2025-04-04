@@ -18,7 +18,7 @@ const Home = () => {
                     return;
                 }
 
-                const userres = await axios.get(`http://localhost:2001/api/users/info`, {
+                const userres = await axios.get(`/api/users/info`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 
@@ -47,7 +47,7 @@ const Home = () => {
                     console.error("No authentication token found");
                     return;
                 }
-                const response = await axios.get(`http://localhost:2001/api/users/get/${rollno}`, {
+                const response = await axios.get(`/api/users/get/${rollno}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
 

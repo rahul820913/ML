@@ -40,7 +40,7 @@ const registerUser = async (req, res) => {
 
         const departmentcode=RollNo.substring(4,6);
 
-        const department= await Department.findOne({departmentcode});
+        const department= await Department.findOne({departmentcode:{ $regex: new RegExp(`\\b${departmentcode}\\b`, 'i') }});
         const userData = {
             RollNo,
             name,

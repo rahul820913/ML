@@ -11,7 +11,7 @@ const UserInfo = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const response = await axios.get("http://localhost:2001/api/users/data", {
+        const response = await axios.get("/api/users/data", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -32,7 +32,7 @@ const UserInfo = () => {
       const token = localStorage.getItem("token");
 
       await axios.put(
-        `http://localhost:2001/api/users/data/${userId}/role`,
+        `/api/users/data/${userId}/role`,
         { role: newRole },
         { headers: { Authorization: `Bearer ${token}` } }
       );

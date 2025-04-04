@@ -16,7 +16,7 @@ const ClassTimeTable = () => {
     const fetchUserInfo = async () => {
       try {
         if (!token) return;
-        const userRes = await axios.get("http://localhost:2001/api/users/info", {
+        const userRes = await axios.get("/api/users/info", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (userRes.data.success) {
@@ -37,7 +37,7 @@ const ClassTimeTable = () => {
       try {
         if (!token || !year || !department) return;
         const timetableRes = await axios.get(
-          `http://localhost:2001/api/users/timetable?year=${year}&department=${department}`,
+          `/api/users/timetable?year=${year}&department=${department}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setTimetable(timetableRes.data);
@@ -64,7 +64,7 @@ const ClassTimeTable = () => {
       department,
     };
     try {
-      await axios.post("http://localhost:2001/api/users/extra", newClass, {
+      await axios.post("/api/users/extra", newClass, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert(`Extra class added for ${day}`);
@@ -79,7 +79,7 @@ const ClassTimeTable = () => {
   const updateClassStatus = async (classId, status) => {
     try {
       const response = await axios.put(
-        `http://localhost:2001/api/users/timetable/cancel/${classId}`,
+        `/api/users/timetable/cancel/${classId}`,
         { status },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -98,7 +98,7 @@ const ClassTimeTable = () => {
     if (!window.confirm("Are you sure you want to delete this extra class?")) return;
     try {
       const response = await axios.delete(
-        `http://localhost:2001/api/users/timetable/extra/${classId}`,
+        `/api/users/timetable/extra/${classId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       if (response.data.success) {

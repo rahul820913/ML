@@ -7,7 +7,7 @@ const Register = () => {
   const [isRegister, setIsRegister] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    rollNo: "",
+    RollNo: "",
     email: "",
     password: "",
   });
@@ -29,8 +29,8 @@ const Register = () => {
 
     try {
       const url = isRegister
-        ? "http://localhost:2001/api/users/register"
-        : "http://localhost:2001/api/users/login";
+        ? "/api/users/register"
+        : "/api/users/login";
 
       const res = await axios.post(url, formData);
       const data = res.data;
@@ -80,9 +80,9 @@ const Register = () => {
                 <label>Roll Number</label>
                 <input
                   type="text"
-                  name="rollNo"
+                  name="RollNo"
                   placeholder="12345"
-                  value={formData.rollNo}
+                  value={formData.RollNo}
                   onChange={handleChange}
                   className="register-input"
                   required

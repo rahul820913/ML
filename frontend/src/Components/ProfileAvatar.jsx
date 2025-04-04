@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ProfileAvatar.css"; 
+import "./ProfileAvatar.css"; 
 
 const ProfileAvatar = ({ name }) => {
     const initial = name ? name.charAt(0).toUpperCase() : "U";

@@ -21,7 +21,7 @@ const ExcelUpload = () => {
 
         try {
             if (!token) throw new Error("No authentication token found");
-            const response = await axios.post("http://localhost:2001/api/users/create/shift", {
+            const response = await axios.post("/api/users/create/shift", {
                 shift,
                 startTime,
                 endTime,
@@ -46,7 +46,7 @@ const ExcelUpload = () => {
         formData.append("file", file);
 
         try {
-            const response = await axios.post("http://localhost:2001/api/users/upload", formData, {
+            const response = await axios.post("/api/users/upload", formData, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

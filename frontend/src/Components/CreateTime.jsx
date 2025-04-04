@@ -56,7 +56,7 @@ const TimeTableCreate = ({ department, year }) => {
         return;
       }
 
-      await axios.post("http://localhost:2001/api/users/create/timetable", timetableData, {
+      await axios.post("/api/users/create/timetable", timetableData, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
