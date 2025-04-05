@@ -228,10 +228,10 @@ const ClassTimeTable = () => {
                               </button>
                             )}
                           </>
-                        ):(
-                        <td>{classInfo.status}</td>
                         )}
                       </td>
+                    ):(
+                        <td>{classInfo.status}</td>
                     )}
                   </tr>
                 ))}
