@@ -180,7 +180,7 @@ const ClassTimeTable = () => {
                   <th>End Time</th>
                   <th>Room</th>
                   <th>Status</th>
-                  {isAdmin && <th>Action</th>}
+{/*                   {isAdmin && <th>Action</th>} */}
                 </tr>
               </thead>
               <tbody>
@@ -199,8 +199,8 @@ const ClassTimeTable = () => {
                     <td>{classInfo.startTime}</td>
                     <td>{classInfo.endTime}</td>
                     <td>{classInfo.room}</td>
-                    <td>{classInfo.status}</td>
-                    {isAdmin && (
+                    
+                    {isAdmin ? (
                       <td>
                         {classInfo.status === "Cancelled" ? (
                           <>
@@ -228,6 +228,8 @@ const ClassTimeTable = () => {
                               </button>
                             )}
                           </>
+                        ):(
+                        <td>{classInfo.status}</td>
                         )}
                       </td>
                     )}
