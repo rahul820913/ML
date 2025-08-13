@@ -1,0 +1,46 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+*.log.*
+
+# npm package-lock file
+package-lock.json
+
+# dotenv environment variables file
+.env
+.env.* 
+
+# TypeScript
+*.tsbuildinfo
+
+# OS-specific files
+.DS_Store          # macOS
+Thumbs.db          # Windows
+
+# IDE/editor specific files
+.vscode/
+.idea/
+
+# Build directories (e.g. if you're using a build tool like Webpack, Babel, etc.)
+dist/
+build/
+
+# Optional: If you want to ignore test output directories
+coverage/
+
+# Optional: Ignore test results
+*.test.js
+*.spec.js
+
+# Ignore the "database" directory if you store any local DB or persistent state
+database/
+
+# Ignore the build folder from Docker (if applicable)
+.docker/
+
+# Ignore any specific file patterns based on your project needs
+*.swp   # Vim swap files
+*.bak   # Backup files
